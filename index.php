@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link  type="text/css" rel="stylesheet" href="style.css">
+    <link  type="text/css" rel="stylesheet" href="./style/style.css">
     <title>To-Do-List</title>
 </head>
 <body>
     <header>
         <h1>To do list</h1>
-        <a href="index.php"><img src="liste.png"></a>
+        <a href="index.php"><img src="style/img/liste.png"></a>
             <?php
                 session_start();
                 if (isset($_SESSION['login'])) {
@@ -21,7 +21,7 @@
                         exit();
                     }
                 } else {
-                    echo "<a href='connexion.php'>connexion</a>";
+                    echo "<a href='./server/connexion.php'>connexion</a>";
                 }
             ?>
     </header>

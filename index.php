@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link  type="text/css" rel="stylesheet" href="./style/style.css">
     <title>To-Do-List</title>
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -34,5 +35,16 @@
             </div>';
         }
     ?>
+
+    <div class="taskList">
+        <div class="task">
+                <h1>Task 2</h1>
+                <input type="checkbox" name="check"/>
+        </div>
+        <div class="task">
+                <h1>Task 2</h1>
+                <input type="checkbox" name="check"/>
+        </div>
+    </div>
 </body>
 </html>

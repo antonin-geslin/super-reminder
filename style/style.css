@@ -64,3 +64,43 @@ body .mainForm button {
     text-transform: uppercase;
     align-items: center;
 }
+
+
+.taskList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.task {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+    height: auto;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+    border-radius: 0.8rem;
+    margin-top: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    word-wrap: break-word;
+}
+
+input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+    border-radius: 1rem;
+    accent-color: black;
+}
+
+.task p {
+    
+}

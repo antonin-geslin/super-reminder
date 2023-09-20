@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link  type="text/css" rel="stylesheet" href="./style/style.css">
     <title>To-Do-List</title>
+    <script src="script.js" defer></script>
+
 </head>
 <body>
     <header>
         <h1>To do list</h1>
         <a href="index.php"><img src="style/img/liste.png"></a>
             <?php
-                session_start();
+                if(!isset($_SESSION))
+                    session_start();
                 if (isset($_SESSION['login'])) {
                     $username = $_SESSION['login'];
                     echo "<div class='sign_out'><p class='login_check'>Bienvenue, " .strip_tags($username). "!</p><form method='post'><button type='submit' name='signout'>Sign Out</button></form></div>";
@@ -26,7 +29,8 @@
             ?>
     </header>
     <?php
-        session_start();
+        if(!isset($_SESSION))
+            session_start();
         if (isset($_SESSION['login'])) {
             echo '<div class="add_task">
                 <input id="myInput" type="text" name="task" placeholder="Task">
@@ -34,5 +38,12 @@
             </div>';
         }
     ?>
+    
+    <div class="task-list">
+        <h1>Liste des Tâches</h1>
+        <div id="taskContainer"></div>
+    </div>
+
+
 </body>
 </html>

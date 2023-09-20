@@ -11,7 +11,8 @@
         <h1>To do list</h1>
         <a href="../index.php"><img src="../style/img/liste.png"></a>
             <?php
-                session_start();
+                if(!isset($_SESSION))
+                    session_start();
                 if (isset($_SESSION['login'])) {
                     $username = $_SESSION['login'];
                     echo "<div class='sign_out'><p class='login_check'>Bienvenue, " .strip_tags($username). "!</p><form method='post'><button type='submit' name='signout'>Sign Out</button></form></div>";

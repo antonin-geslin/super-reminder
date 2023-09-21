@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadTasksFromLocalStorage();
 });
 
-function addTaskToContainer(taskText, addToLocalStorage = true) {
+function addTaskToContainer(taskText) {
     const taskDiv = document.createElement('div');
     taskDiv.className = 'task';
 
@@ -45,23 +45,23 @@ function addTaskToContainer(taskText, addToLocalStorage = true) {
     taskContainer.appendChild(taskDiv);
 
     console.log('Tâche ajoutée au conteneur:', taskText);
-
-    if (addToLocalStorage) {
-        // Enregistrer la nouvelle tâche dans le localStorage
-        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        tasks.push(taskText);
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }
+    
+    // Enregistrer la nouvelle tâche dans le localStorage
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.push(taskText);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+// fonction pour charger les taches du localStorage
 function loadTasksFromLocalStorage() {
     const taskContainer = document.getElementById('taskContainer');
     taskContainer.innerHTML = '';  // Vider le conteneur de tâches
 
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    tasks.forEach(taskText => addTaskToContainer(taskText, false));
+    tasks.forEach(taskText => addTaskToContainer(taskText));
 }
 
+// fonction pour supprimer une tache du localStorage
 function removeTaskFromLocalStorage(taskText) {
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks = tasks.filter(task => task !== taskText);
